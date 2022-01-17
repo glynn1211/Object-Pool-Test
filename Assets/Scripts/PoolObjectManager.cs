@@ -9,6 +9,8 @@ public class PoolObjectManager: MonoBehaviour
     [SerializeField]
     GameObject objectToSpawn;
 
+    public string objectTag;
+
     public int GetAmount()
     {
         return amountToSpawn;

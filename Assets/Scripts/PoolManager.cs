@@ -7,7 +7,18 @@ public class PoolManager : MonoBehaviour
     [SerializeField]
     GameObject[] pooledObjects;
 
+    public static PoolManager Instance;
+
     private Dictionary<string, List<GameObject>> pools = new Dictionary<string, List<GameObject>>();
+
+    private void Awake()
+    {
+        if(Instance != null)
+        {
+            Destroy(this);
+        }
+        Instance = this;
+    }
 
     private void Start()
     {
